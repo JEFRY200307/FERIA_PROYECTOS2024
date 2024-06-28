@@ -1,0 +1,24 @@
+[
+   {
+      "username":"20231452M",
+      "password":"1234",
+      "rol":"doctor"
+   },
+   
+   {
+      "username":"admin",
+      "password":"1234",
+      "rol":"admin"
+   },
+   {
+      "username":"johnsmith",
+      "password":"password123",
+      "rol":"user"
+   },
+   {
+      "username":"janedoe",
+      "password":"securepass",
+      "rol":"user"
+   }
+
+]
