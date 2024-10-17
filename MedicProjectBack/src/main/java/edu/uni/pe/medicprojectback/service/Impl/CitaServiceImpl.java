@@ -50,7 +50,7 @@ public class CitaServiceImpl implements CitaService {
     @Override
     @Transactional(readOnly = true)
     public List<Cita> getCitasPorUsuario(String idCodUni) {
-        String sql = "SELECT * FROM Cita WHERE id_cod_uni = ?";
+        String sql = "SELECT * FROM Cita WHERE id_cod_uni = ? AND estado ='RES'AND estado ='ASI'AND estado ='FAL'";
         return jdbcTemplate.query(sql, new Object[] { idCodUni }, (rs, rowNum) -> {
             Cita cita = new Cita();
             cita.setIdCita(rs.getInt("id_cita"));
@@ -69,7 +69,7 @@ public class CitaServiceImpl implements CitaService {
     @Override
     @Transactional(readOnly = true)
     public List<Cita> getCitasPorMedico(String nombreEspecialista, String apellidoEspecialista) {
-        String sql = "SELECT * FROM Cita WHERE nombre_especialista = ? AND apellido_especialista = ?";
+        String sql = "SELECT * FROM Cita WHERE nombre_especialista = ? AND apellido_especialista = ?AND estado ='RES'";
         return jdbcTemplate.query(sql, new Object[]{nombreEspecialista, apellidoEspecialista}, (rs, rowNum) -> {
             Cita cita = new Cita();
             cita.setIdCita(rs.getInt("id_cita"));
